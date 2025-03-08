@@ -44,7 +44,7 @@ def register():
         address = request.form['address']
         company_type = request.form['company_type']
         size = request.form['size']
-        annual_emission = float(request.form['annual_emission'])
+        annual_emission = float(request.form['annual_emissions'])
         carbon_credits = float(request.form['carbon_credits'])
         company_password = request.form['company_password']
 
@@ -63,7 +63,7 @@ def register():
     size=size,
     annual_emissions=annual_emission, 
     carbon_credits=carbon_credits,
-    password=hashed_password )
+    company_password=hashed_password )
 
         db.session.add(new_user)
         db.session.commit()
