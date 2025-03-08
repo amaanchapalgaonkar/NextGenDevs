@@ -110,5 +110,23 @@ def predict():
             return render_template('predict.html', error='Invalid input. Please enter valid numbers.')
     return render_template('predict.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        user = company_registration.query.filter_by(email=email).first()
+
+        if user and check_password_hash(user.company_password, password):
+            flash('Login successful!', 'success')
+            return redirect(url_for('dashboard')) 
+        else:
+            flash('Invalid email or password. Please try again.', 'danger')
+            return redirect(url_for('login'))
+
+    return render_template('login.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
