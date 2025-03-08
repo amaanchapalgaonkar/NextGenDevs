@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Credit Calculator</title>
+    <style>
+        body {
+            background: url(images/calbg.jpg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        header{
+            background: linear-gradient(to right, rgb(95, 180, 95), rgb(12, 72, 6));
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            background: #fff;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            width: 90%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Carbon Credit Calculator</h1>
+    </header>
+    <div class="container">
+        <h2>Calculate Your Carbon Credits</h2>
+        <form id="carbonForm">
+            <input type="text" id="company" placeholder="Company Name" required>
+            <input type="number" id="year" placeholder="Year" required>
+            <input type="number" id="energy" placeholder="Energy Usage (MWh)" required>
+            <input type="number" id="fuel" placeholder="Fuel Consumption (Liters)" required>
+            <input type="number" id="output" placeholder="Industrial Output (Tons)" required>
+            <input type="number" id="waste" placeholder="Waste Generated (Tons)" required>
+            <input type="number" id="transport" placeholder="Transport Distance (KM)" required>
+            <button type="button" onclick="getPrediction()">Calculate Carbon Credits</button>
+        </form>
+        
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function getPrediction() {
+            let data = {
+                company: document.getElementById("company").value,
+                year: document.getElementById("year").value,
+                energy: document.getElementById("energy").value,
+                fuel: document.getElementById("fuel").value,
+                output: document.getElementById("output").value,
+                waste: document.getElementById("waste").value,
+                transport: document.getElementById("transport").value
+            };
+            
+            fetch("http://127.0.0.1:5000/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerText = "Carbon Credits Required: " + data.carbon_credits;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
