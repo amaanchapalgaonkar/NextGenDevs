@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f6;
+      background-image: url("registration.jpeg");
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(
+        to right,
+        rgb(95, 180, 95),
+        rgb(12, 72, 6)
+      );
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    main {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 22px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input,
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    input[type="file"] {
+      border: none;
+    }
+
+    button {
+      background-color: #30913b;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #4bac6b;
+    }
+
+    #registration-message {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 16px;
+      color: #0077b6;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+  
+
+    <header>
+       
+      <h1>Company Registration</h1>
+    </header>
+    <main>
+      <section id="registration">
+        <h2>Register Your Company</h2>
+        <form id="registration-form" enctype="multipart/form-data">
+          <label for="company-name">Company Name:</label>
+          <input type="text" id="company-name" required />
+
+          <label for="company-email">Company Email:</label>
+          <input type="email" id="company-email" required />
+
+          <label for="company-address">Company Address:</label>
+          <input type="text" id="company-address" required />
+
+          <label for="company-type">Company Type:</label>
+          <select id="company-type" required>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="transport">Transport</option>
+            <option value="energy">Energy</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="company-size">Company Size:</label>
+          <select id="company-size" required>
+            <option value="small">Small (1-50 employees)</option>
+            <option value="medium">Medium (51-500 employees)</option>
+            <option value="large">Large (500+ employees)</option>
+          </select>
+
+          <label for="annual-emissions"
+            >Annual Carbon Emissions (in tons):</label
+          >
+          <input type="number" id="annual-emissions" required />
+
+          <label for="credits-needed">Carbon Credits Needed:</label>
+          <input type="number" id="credits-needed" required />
+
+          <h3>Upload Required Documents</h3>
+          <label for="business-license">Business License:</label>
+          <input
+            type="file"
+            id="business-license"
+            accept=".pdf,.jpg,.png"
+            required
+          />
+
+          <label for="compliance-certificate"
+            >Environmental Compliance Certificate:</label
+          >
+          <input
+            type="file"
+            id="compliance-certificate"
+            accept=".pdf,.jpg,.png"
+            required
+          />
+
+          <label for="tax-id"
+            >Tax Identification Number (TIN) / GST Certificate:</label
+          >
+          <input type="file" id="tax-id" accept=".pdf,.jpg,.png" required />
+
+          <button type="submit">Register</button>
+        </form>
+        <p id="registration-message"></p>
+      </section>
+    </main>
+   
+  </body>
+</html>
