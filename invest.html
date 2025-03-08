@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Invest | Offset Your Carbon Footprint</title>
+    <style>
+        /* Video container styling */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Make video cover entire screen */
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content styling */
+        .content {
+            position: relative;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .video{
+            background-size: cover;
+            
+        }
+
+        header{
+            background-color: #1e5d2d;
+            color: white;
+            position: relative;
+            top:0px;
+            padding: 15px;
+            margin: 0;
+            height: 90px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project {
+            padding: 15px;
+            margin: 10px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .invest-btn {
+            background: #2c7a3d;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .invest-btn:hover {
+            background: #1e5d2d;
+        }
+
+        .tracker {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+    .own-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3a814c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.own-btn:hover{
+    background: #2a9d47;
+}
+.head{
+    position:relative ;
+    top: 10px;
+    background-color: #2c7a3d;
+    padding: 50px;
+    top: 0%;
+    color: #e8f5e9;
+    
+}
+    </style>
+    
+</head>
+<body>
+    <div class="video-container">
+    <video autoplay loop muted>
+        <source src="/NextGenDevs/video copy.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video></div>
+<div class="header">
+    <h2 class="head">🌍 Invest in Eco-Friendly Projects to Offset Emissions</h2>
+</div>
+    <div class="container">
+        <div class="project">
+            <h3>🌱 Reforestation Project</h3>
+            <p>Every $10 plants 5 trees, offsetting <span class="highlight">50 kg CO₂</span>.</p>
+            <button class="invest-btn" onclick="invest('Reforestation', 10, 50)">Invest $10</button>
+        </div>
+
+        <div class="project">
+            <h3>☀️ Solar Energy Expansion</h3>
+            <p>Every $100 helps install a solar panel, offsetting <span class="highlight">500 kg CO₂</span>.</p>
+            <button class="invest-btn" onclick="invest('Solar Energy', 100, 500)">Invest $100</button>
+        </div>
+
+        <div class="project">
+            <h3>🏭 Carbon Capture & Storage</h3>
+            <p>Every $50 contributes to carbon capture, offsetting <span class="highlight">300 kg CO₂</span>.</p>
+            <button class="invest-btn" onclick="invest('Carbon Capture', 50, 300)">Invest $50</button>
+        </div>
+
+        <div class="tracker">
+            <h3>💰 Your Investment Summary</h3>
+            <p><strong>Total Amount Invested:</strong> $<span id="total-invested">0</span></p>
+            <p><strong>Total CO₂ Offset:</strong> <span id="total-offset">0</span> kg</p>
+        </div>
+
+        <div class="own_project"><a href="selfprojects.html" class="own-btn">Propose own investment</a></div>
+    </div>
+
+    <script>
+        let totalInvested = localStorage.getItem("totalInvested") ? parseInt(localStorage.getItem("totalInvested")) : 0;
+        let totalOffset = localStorage.getItem("totalOffset") ? parseInt(localStorage.getItem("totalOffset")) : 0;
+
+        document.getElementById("total-invested").textContent = totalInvested;
+        document.getElementById("total-offset").textContent = totalOffset;
+
+        function invest(project, amount, co2Offset) {
+            totalInvested += amount;
+            totalOffset += co2Offset;
+
+            // Save to local storage
+            localStorage.setItem("totalInvested", totalInvested);
+            localStorage.setItem("totalOffset", totalOffset);
+
+            // Update UI
+            document.getElementById("total-invested").textContent = totalInvested;
+            document.getElementById("total-offset").textContent = totalOffset;
+
+            alert(`You invested $${amount} in ${project}! You have offset ${co2Offset} kg of CO₂.`);
+        }
+    </script>
+
+</body>
+</html>
