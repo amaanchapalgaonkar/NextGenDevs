@@ -70,7 +70,7 @@ def register():
         flash('Account successfully created!', 'success')
         return redirect(url_for('home'))
 
-    return render_template('register.html')
+    return render_template('registration.html')
 
 @app.route('/invest')
 def invest():
