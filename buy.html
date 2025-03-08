@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Credit Marketplace</title>
+    <script src="carbon_credit.js"></script>
+    <style>
+      
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #ffffff;
+        color: #333;
+        background-image: url("/NextGenDevs/images/buy2.jpeg");
+        background-size: cover;
+      }
+      header {
+        background-color: #147b52;
+        height: 100px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffffff;
+      }
+      .logo1 {
+        width: 100px; 
+        height: 96px;
+        position: absolute;
+        top: 0px;
+        left: 0px; 
+      }
+
+      section {
+      
+
+        background: white;
+        position: relative;
+        top:60px;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+      }
+
+      h2 {
+        color: #147b52;
+        border-bottom: 2px solid #188460;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      /* Table Styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #11884b;
+        color: white;
+      }
+
+      /* Button Styles */
+      button {
+        background-color: #118f47;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background-color: #1b9a7c;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #196f41;
+        color: white;
+        margin-top: 70px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <header class="header">
+      <h1>Carbon Credit Market</h1>
+      <img
+        src="/NextGenDevs/images/mainlogo.jpeg"
+        alt="Company Logo"
+        class="logo1"
+      />
+    </header>
+
+    <section id="marketplace">
+      <h2>Buy & Sell Carbon Credits</h2>
+      <p>
+        Welcome to the carbon credit marketplace, where companies can buy and
+        sell carbon credits to offset their emissions. Each credit represents a
+        reduction of 1 metric ton of CO₂.
+      </p>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Credits Available</th>
+          <th>Price per Credit ($)</th>
+          <th>Market Value ($)</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Reliance Ltd.</td>
+          <td>500</td>
+          <td>12.50</td>
+          <td>6,250</td>
+          <td><button>Buy</button></td>
+        </tr>
+        <tr>
+          <td>Tata Inc.</td>
+          <td>300</td>
+          <td>11.75</td>
+          <td>3,525</td>
+          <td><button>Buy</button></td>
+        </tr>
+        <tr>
+          <td>Wipro</td>
+          <td>700</td>
+          <td>13.00</td>
+          <td>9,100</td>
+          <td><button>Buy</button></td>
+        </tr>
+      </table>
+      <p><em>Prices fluctuate based on supply and demand.</em></p>
+    </section>
+
+    <section id="dashboard">
+      <h2>Company Dashboard</h2>
+      <p>
+        This dashboard provides an overview of your company's carbon credits and
+        offset achievements.
+      </p>
+      <p><strong>Carbon Credits Owned:</strong> 120</p>
+      <p><strong>Total Carbon Offset:</strong> 2400 kg CO₂</p>
+      <p><strong>Recent Transactions:</strong></p>
+      <ul>
+        <li>Purchased 50 credits from Green Energy Ltd. - $625</li>
+        <li>Sold 30 credits to EcoFuture Inc. - $352.50</li>
+      </ul>
+    </section>
+
+    <section id="profile">
+      <h2>Company Profile</h2>
+      <p>
+        This section contains your company's emissions data and sustainability
+        goals.
+      </p>
+      <p><strong>Company Name:</strong> Eco Enterprises</p>
+      <p><strong>Total Emissions:</strong> 18,000 kg CO₂</p>
+      <p><strong>Offset Goal:</strong> 50% by 2030</p>
+      <p><strong>Current Offset Progress:</strong> 13.3%</p>
+    </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Dummy marketplace data
+        const marketplaceData = [
+            { company: "Green Energy Ltd.", credits: 500, price: 12.50 },
+            { company: "EcoFuture Inc.", credits: 300, price: 11.75 },
+            { company: "Sustainable Solutions", credits: 700, price: 13.00 }
+        ];
+    
+        const userDashboard = {
+            creditsOwned: 120,
+            totalOffset: 2400,
+            transactions: []
+        };
+    
+        function updateMarketplace() {
+            const table = document.querySelector("#marketplace table");
+            table.innerHTML = `
+                <tr>
+                    <th>Company</th>
+                    <th>Credits Available</th>
+                    <th>Price per Credit ($)</th>
+                    <th>Market Value ($)</th>
+                    <th>Action</th>
+                </tr>
+            `;
+            marketplaceData.forEach((entry, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${entry.company}</td>
+                    <td>${entry.credits}</td>
+                    <td>${entry.price.toFixed(2)}</td>
+                    <td>${(entry.credits * entry.price).toFixed(2)}</td>
+                    <td><button onclick="buyCredits(${index})">Buy</button></td>
+                `;
+                table.appendChild(row);
+            });
+        }
+    
+        function updateDashboard() {
+            document.querySelector("#dashboard p:nth-child(2)").innerHTML = `<strong>Carbon Credits Owned:</strong> ${userDashboard.creditsOwned}`;
+            document.querySelector("#dashboard p:nth-child(3)").innerHTML = `<strong>Total Carbon Offset:</strong> ${userDashboard.totalOffset} kg CO₂`;
+            const transactionsList = document.querySelector("#dashboard ul");
+            transactionsList.innerHTML = "";
+            userDashboard.transactions.forEach(transaction => {
+                const li = document.createElement("li");
+                li.textContent = transaction;
+                transactionsList.appendChild(li);
+            });
+        }
+    
+        window.buyCredits = function(index) {
+            const selected = marketplaceData[index];
+            if (selected.credits > 0) {
+                selected.credits -= 10; // Simulated purchase of 10 credits per click
+                userDashboard.creditsOwned += 10;
+                userDashboard.totalOffset += 200;
+                userDashboard.transactions.push(`Bought 10 credits from ${selected.company} - $${(10 * selected.price).toFixed(2)}`);
+                updateMarketplace();
+                updateDashboard();
+            } else {
+                alert("No more credits available from this seller.");
+            }
+        };
+    
+        function fluctuatePrices() {
+            marketplaceData.forEach(entry => {
+                const fluctuation = (Math.random() * 2 - 1).toFixed(2); // Random fluctuation between -1 and +1
+                entry.price = Math.max(10, entry.price + parseFloat(fluctuation)); // Ensure price doesn't drop below 10
+            });
+            updateMarketplace();
+        }
+    
+        setInterval(fluctuatePrices, 5000); // Prices change every 5 seconds
+    
+        updateMarketplace();
+        updateDashboard();
+    });
+    </script>
+ 
+    <footer>
+      <p>&copy; 2025 Carbon Credit Marketplace | Supporting a Greener Future</p>
+    </footer>
+  </body>
+</html>
