@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Credit Marketplace</title>
+    <style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.navbar:hover {
+    background-color: #1f722e;
+}
+header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #ffffff, #ffffff); /* Green to white gradient */
+    padding: 10px 20px;
+    font-size: small;
+}
+
+.logo1 {
+    width: 200px;  /* Adjust size as needed */
+    height: 100px;
+    margin-right: 15px; /* Space between logo and text */
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+
+
+
+header {
+    background-color: #004d40;
+    color: rgb(0, 0, 0);
+    padding: 19px 0;
+    text-align: left;
+    height: 90px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    height: 400px;
+    text-align: center;
+    padding: 50px;
+    background-image: url("logo.jpeg");
+    background-size: cover;
+    
+    color: white;
+}
+.inner{
+    color: #000000;
+   
+    position: relative;
+    top: 1px;
+    
+ 
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3a814c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #135d20;
+}
+
+/* Market Overview */
+#market-overview {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+#market-overview{
+    background: linear-gradient(to bottom, #297646, #ffffff);
+}
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const marketDataDiv = document.getElementById("market-data");
+    
+        function fetchMarketData() {
+            // Simulated carbon credit price data
+            const carbonPrice = (Math.random() * (50 - 20) + 20).toFixed(2); // Price range: $20 - $50 per ton
+            const availableCredits = Math.floor(Math.random() * (1000 - 200) + 200); // Available credits range: 200 - 1000
+    
+            marketDataDiv.innerHTML = `
+                <h3>Current Carbon Credit Price: $${carbonPrice} per ton</h3>
+                <p>Available Credits for Trade: ${availableCredits}</p>
+            `;
+        }
+    
+        // Fetch market data initially and refresh every 5 seconds
+        fetchMarketData();
+        setInterval(fetchMarketData, 3000);
+    });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi', 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+      
+      <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/03/04/10/20250304104907-A3H7BI8L.js"></script>
+        <img src="mainlogo.jpeg" alt="Company Logo" class="logo1"> 
+        <h1>ZeroCarbonX<h1>
+        <nav>
+            <ul>
+                <li class="navbar"><a href="index.html">Home</a></li>
+                <li class="navbar"><a href="footprint.html">Carbon Footprint Calc</a></li>
+                <li class="navbar"><a href="buy.html">Buy Credits</a></li>
+                <li class="navbar"><a href="sell.html">Sell Credits</a></li>
+                <li class="navbar"><a href="registration.html">Register Now</a></li>
+                <li class="navbar"><a href="invest.html">Invest in Eco</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+    <section id="hero">
+      <div class="inner">
+        <h2>Trade Carbon Credits & Reduce Emissions</h2>
+        <p>Buy, sell, and track your carbon credits with real-time pricing.</p>
+      </div>
+      <a href="buy.html" class="btn">Buy Credits</a>
+      <a href="sell.html" class="btn">Sell Credits</a>
+    </section>
+
+    <section id="market-overview">
+      <h2>Market Overview</h2>
+      <div id="market-data">
+        <p>Loading latest carbon credit prices...</p>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>
