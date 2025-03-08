@@ -1,0 +1,167 @@
+[
+    {
+        "Company":"Reliance Industries",
+        "Year":2020,
+        "Energy Usage (MWh)":90000,
+        "Fuel Consumption (L)":400000,
+        "Industrial Output (tons)":25000,
+        "Waste Generated (tons)":1000,
+        "Transport Distance (km)":200000,
+        "Total Emissions (kg CO\u2082)":300000000,
+        "Carbon Credits Required":300000
+    },
+    {
+        "Company":"Reliance Industries",
+        "Year":2021,
+        "Energy Usage (MWh)":92000,
+        "Fuel Consumption (L)":420000,
+        "Industrial Output (tons)":25500,
+        "Waste Generated (tons)":1050,
+        "Transport Distance (km)":205000,
+        "Total Emissions (kg CO\u2082)":310000000,
+        "Carbon Credits Required":310000
+    },
+    {
+        "Company":"Reliance Industries",
+        "Year":2022,
+        "Energy Usage (MWh)":94000,
+        "Fuel Consumption (L)":440000,
+        "Industrial Output (tons)":26000,
+        "Waste Generated (tons)":1100,
+        "Transport Distance (km)":210000,
+        "Total Emissions (kg CO\u2082)":320000000,
+        "Carbon Credits Required":320000
+    },
+    {
+        "Company":"Tata Steel",
+        "Year":2020,
+        "Energy Usage (MWh)":80000,
+        "Fuel Consumption (L)":350000,
+        "Industrial Output (tons)":20000,
+        "Waste Generated (tons)":900,
+        "Transport Distance (km)":180000,
+        "Total Emissions (kg CO\u2082)":250000000,
+        "Carbon Credits Required":250000
+    },
+    {
+        "Company":"Tata Steel",
+        "Year":2021,
+        "Energy Usage (MWh)":82000,
+        "Fuel Consumption (L)":360000,
+        "Industrial Output (tons)":20500,
+        "Waste Generated (tons)":950,
+        "Transport Distance (km)":185000,
+        "Total Emissions (kg CO\u2082)":260000000,
+        "Carbon Credits Required":260000
+    },
+    {
+        "Company":"Tata Steel",
+        "Year":2022,
+        "Energy Usage (MWh)":84000,
+        "Fuel Consumption (L)":370000,
+        "Industrial Output (tons)":21000,
+        "Waste Generated (tons)":1000,
+        "Transport Distance (km)":190000,
+        "Total Emissions (kg CO\u2082)":270000000,
+        "Carbon Credits Required":270000
+    },
+    {
+        "Company":"Infosys",
+        "Year":2020,
+        "Energy Usage (MWh)":50000,
+        "Fuel Consumption (L)":100000,
+        "Industrial Output (tons)":8000,
+        "Waste Generated (tons)":400,
+        "Transport Distance (km)":100000,
+        "Total Emissions (kg CO\u2082)":100000000,
+        "Carbon Credits Required":100000
+    },
+    {
+        "Company":"Infosys",
+        "Year":2021,
+        "Energy Usage (MWh)":52000,
+        "Fuel Consumption (L)":105000,
+        "Industrial Output (tons)":8200,
+        "Waste Generated (tons)":420,
+        "Transport Distance (km)":105000,
+        "Total Emissions (kg CO\u2082)":105000000,
+        "Carbon Credits Required":105000
+    },
+    {
+        "Company":"Infosys",
+        "Year":2022,
+        "Energy Usage (MWh)":54000,
+        "Fuel Consumption (L)":110000,
+        "Industrial Output (tons)":8500,
+        "Waste Generated (tons)":450,
+        "Transport Distance (km)":110000,
+        "Total Emissions (kg CO\u2082)":110000000,
+        "Carbon Credits Required":110000
+    },
+    {
+        "Company":"Wipro",
+        "Year":2020,
+        "Energy Usage (MWh)":45000,
+        "Fuel Consumption (L)":95000,
+        "Industrial Output (tons)":7500,
+        "Waste Generated (tons)":380,
+        "Transport Distance (km)":95000,
+        "Total Emissions (kg CO\u2082)":95000000,
+        "Carbon Credits Required":95000
+    },
+    {
+        "Company":"Wipro",
+        "Year":2021,
+        "Energy Usage (MWh)":47000,
+        "Fuel Consumption (L)":98000,
+        "Industrial Output (tons)":7700,
+        "Waste Generated (tons)":400,
+        "Transport Distance (km)":98000,
+        "Total Emissions (kg CO\u2082)":98000000,
+        "Carbon Credits Required":98000
+    },
+    {
+        "Company":"Wipro",
+        "Year":2022,
+        "Energy Usage (MWh)":49000,
+        "Fuel Consumption (L)":102000,
+        "Industrial Output (tons)":7900,
+        "Waste Generated (tons)":420,
+        "Transport Distance (km)":102000,
+        "Total Emissions (kg CO\u2082)":102000000,
+        "Carbon Credits Required":102000
+    },
+    {
+        "Company":"Adani Group",
+        "Year":2020,
+        "Energy Usage (MWh)":110000,
+        "Fuel Consumption (L)":500000,
+        "Industrial Output (tons)":30000,
+        "Waste Generated (tons)":1200,
+        "Transport Distance (km)":250000,
+        "Total Emissions (kg CO\u2082)":350000000,
+        "Carbon Credits Required":350000
+    },
+    {
+        "Company":"Adani Group",
+        "Year":2021,
+        "Energy Usage (MWh)":115000,
+        "Fuel Consumption (L)":520000,
+        "Industrial Output (tons)":31000,
+        "Waste Generated (tons)":1250,
+        "Transport Distance (km)":260000,
+        "Total Emissions (kg CO\u2082)":360000000,
+        "Carbon Credits Required":360000
+    },
+    {
+        "Company":"Adani Group",
+        "Year":2022,
+        "Energy Usage (MWh)":120000,
+        "Fuel Consumption (L)":540000,
+        "Industrial Output (tons)":32000,
+        "Waste Generated (tons)":1300,
+        "Transport Distance (km)":270000,
+        "Total Emissions (kg CO\u2082)":370000000,
+        "Carbon Credits Required":370000
+    }
+]
