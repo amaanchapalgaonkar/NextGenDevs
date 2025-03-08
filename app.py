@@ -18,10 +18,10 @@ class company_registration(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     address = db.Column(db.String(200), nullable=False)
     company_type = db.Column(db.String(50), nullable=False)
-    size = db.Column(db.String(50), nullable=False)
     annual_emissions = db.Column(db.Float, nullable=False) 
     carbon_credits = db.Column(db.Float, nullable=False)
-    password = db.Column(db.String(200), nullable=False)
+    company_password = db.Column(db.String(200), nullable=False)
+
 
 
 @app.route('/')
@@ -43,7 +43,6 @@ def register():
         email = request.form['email']
         address = request.form['address']
         company_type = request.form['company_type']
-        size = request.form['size']
         annual_emission = float(request.form['annual_emissions'])
         carbon_credits = float(request.form['carbon_credits'])
         company_password = request.form['company_password']
@@ -60,7 +59,6 @@ def register():
     email=email,
     address=address,
     company_type=company_type,
-    size=size,
     annual_emissions=annual_emission, 
     carbon_credits=carbon_credits,
     company_password=hashed_password )
@@ -69,7 +67,7 @@ def register():
         db.session.commit()
 
         flash('Account successfully created!', 'success')
-        return redirect(url_for('home'))
+        return redirect(url_for('buy'))
 
     return render_template('registration.html')
 
