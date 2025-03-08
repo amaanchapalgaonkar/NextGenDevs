@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carbon Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #30913b;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Emissions Predictor</h1>
+        <form method="POST">
+            <label>Energy Usage (MWh):</label>
+            <input type="number" name="energy_usage" step="0.01" required />
+            
+            <label>Fuel Consumption (L):</label>
+            <input type="number" name="fuel_consumption" step="0.01" required />
+            
+            <label>Industrial Output (tons):</label>
+            <input type="number" name="industrial_output" step="0.01" required />
+            
+            <label>Waste Generated (tons):</label>
+            <input type="number" name="waste_generated" step="0.01" required />
+            
+            <label>Transport Distance (km):</label>
+            <input type="number" name="transport_distance" step="0.01" required />
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if emissions and credits %}
+        <div class="result">
+            <p>Predicted Carbon Emissions (kg CO₂): {{ emissions }}</p>
+            <p>Predicted Carbon Credits Required: {{ credits }}</p>
+        </div>
+        {% elif error %}
+        <div class="error">
+            {{ error }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
