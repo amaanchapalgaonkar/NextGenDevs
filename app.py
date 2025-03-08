@@ -2,6 +2,7 @@ import pymysql
 from flask import Flask, request, render_template, url_for, flash, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash
+from werkzeug.security import check_password_hash
 from ai_model import predict_emissions, predict_credits
 
 app = Flask(__name__)
@@ -120,7 +121,7 @@ def login():
 
         if user and check_password_hash(user.company_password, password):
             flash('Login successful!', 'success')
-            return redirect(url_for('dashboard')) 
+            return redirect(url_for('home')) 
         else:
             flash('Invalid email or password. Please try again.', 'danger')
             return redirect(url_for('login'))
